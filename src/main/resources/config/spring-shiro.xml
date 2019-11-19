@@ -37,7 +37,6 @@
     <bean id="hashFormatFactory" class="org.apache.shiro.crypto.hash.format.DefaultHashFormatFactory"></bean>
 
 
-
     <!-- 会话ID生成器 -->
     <bean id="sessionIdGenerator" class="org.apache.shiro.session.mgt.eis.JavaUuidSessionIdGenerator"/>
 
@@ -124,7 +123,7 @@
         </property>
     </bean>
     <!-- Realm实现 -->
-    <bean id="userRealm" class="realm.UserRealm">
+    <bean id="userRealm" class="com.jihu.realm.UserRealm">
         <property name="credentialsMatcher" ref="passwordMatcher"/>
         <property name="cachingEnabled" value="false"/>
         <!--<property name="userservice" ref="userservice"/>-->

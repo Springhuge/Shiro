@@ -156,11 +156,6 @@
         </dependency>
         <dependency>
             <groupId>org.activiti</groupId>
-            <artifactId>activiti-engine</artifactId>
-            <version>5.18.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.activiti</groupId>
             <artifactId>activiti-spring</artifactId>
             <version>5.18.0</version>
         </dependency>
@@ -200,6 +195,16 @@
             <artifactId>commons-collections</artifactId>
             <version>3.2.1</version>
         </dependency>
+
+        <!--简化pojo开发-->
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.8</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
 </project>

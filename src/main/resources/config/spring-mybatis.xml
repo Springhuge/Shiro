@@ -32,12 +32,12 @@
     <bean id="sqlSessionFactory"
           class="org.mybatis.spring.SqlSessionFactoryBean"
           p:dataSource-ref="dataSource"
-          p:configLocation="classpath:conf/mybatis-config.xml"
+          p:configLocation="classpath:config/mybatis-config.xml"
           p:mapperLocations="classpath:mapper/*.xml"/> <!-- configLocation为mybatis属性 mapperLocations为所有mapper-->
 
     <!-- spring与mybatis整合配置，扫描所有mapper -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"
-          p:basePackage="mapper"
+          p:basePackage="com.jihu.mapper"
           p:sqlSessionFactoryBeanName="sqlSessionFactory"/>
 
     <!-- 对数据源进行事务管理 -->

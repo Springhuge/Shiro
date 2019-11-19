@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jihu.mapper.RoleMapper">
+
+    <resultMap id="roleMap" type="com.jihu.entity.Role" autoMapping="true">
+        <id property="id" column="roleid"></id>
+        <collection property="role_permissions" column="role_id" ofType="com.jihu.entity.Role_permission">
+            <association property="permission" column="permission_id" javaType="com.jihu.entity.Permission">
+                <id property="permissionid" column="permissionid"></id>
+                <result property="permission" column="permission" />
+                <result property="decription" column="description"/>
+            </association>
+        </collection>
+
+    </resultMap>
+
+    <select id="selectRoleById" resultMap="roleMap">
+        SELECT * FROM `sys_roles` r
+        inner join sys_roles_permissions rp on r.roleid = rp.role_id
+        left join  sys_permissions p on rp.permission_id = p.permissionid
+        where r.roleid = #{roleid}
+    </select>
+
+</mapper>
